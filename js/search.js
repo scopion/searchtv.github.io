@@ -71,7 +71,7 @@ var search = function (datas, input_ele, content_ele) {
     content_ele.innerHTML = str;
 }
 
-var searchFunc = function (path, search_id, content_id) {
+var searchFunc = function (path, search_id, content_id, btn_id) {
     'use strict';
     $.ajax({
         url: path,
@@ -82,13 +82,16 @@ var searchFunc = function (path, search_id, content_id) {
             var $input = document.getElementById(search_id);
             if (!$input) return;
             var $resultContent = document.getElementById(content_id);
+            var $searchButton = document.getElementById(btn_id);
             search(datas, $input, $resultContent);
             $input.addEventListener('keydown', function (e) {
                 if (e.keyCode == 13) {
                     search(datas, this, $resultContent);
                 }
             });
-
+            $searchButton.addEventListener('click', function () {
+                search(datas, $input, $resultContent);
+            });
         }
     });
 }
