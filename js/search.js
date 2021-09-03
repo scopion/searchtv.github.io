@@ -42,7 +42,7 @@ var search = function (datas, input_ele, content_ele) {
         // show search results
         // show search results
         if (isMatch) {
-            str += "<div class='item'><a href='" + data_url + "' class='search-result-title'><h2>" + data_title + "</h2></a>";
+            str += "<div class='item'><a target='_blank' href='" + data_url + "' class='search-result-title'><h2>" + data_title + "</h2></a>";
             str += "<a>" + data_url + "</a>"
             var content = data.origin_title.trim().replace(/<[^>]+>/g, "");
             if (first_occur >= 0) {
@@ -63,7 +63,8 @@ var search = function (datas, input_ele, content_ele) {
                 }
 
                 var match_content = content.substring(start, end);
-                str += "<p class=\"search-result-content\">" + match_content + "...</p></div>"
+                str += "<p class=\"search-result-content\">" + match_content + "...</p>"
+                str += "<a class=\"badge bg-light text-dark\" target='_blank' href='" + data.real_url + "'>视频地址 - " + data.format +"格式</a></div>"
             }
         }
     });
