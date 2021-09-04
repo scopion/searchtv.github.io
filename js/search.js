@@ -64,7 +64,10 @@ var search = function (datas, input_ele, content_ele) {
 
                 var match_content = content.substring(start, end);
                 str += "<p class=\"search-result-content\">" + match_content + "...</p>"
-                str += "<a class=\"badge bg-light text-dark\" target='_blank' href='" + data.real_url + "'>视频地址 - " + data.format +"格式</a></div>"
+                if (data.real_url) {
+                    str += "<a class=\"badge bg-light text-dark\" target='_blank' href='" + data.real_url + "'>视频地址 - " + data.format + "格式</a>"
+                }
+                str += "</div>";
             }
         }
     });
