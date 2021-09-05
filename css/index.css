@@ -56,3 +56,16 @@ svg path {
         margin-top: 3px
     }
 }
+
+#menu a {
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px;
+    color: black;
+}
+
+#menu .active {
+    border-bottom: 3px solid #1a73e8;
+    padding-bottom: 3px;
+    color: #1a73e8;
+}
